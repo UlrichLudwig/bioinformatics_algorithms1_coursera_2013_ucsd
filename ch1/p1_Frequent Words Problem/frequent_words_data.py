@@ -1,5 +1,5 @@
 
-    # divide the string get a kmers string list
+# divide the string get a kmers string list
 def devide_str(input_str,kmer):
     output = []
     for i in range(len(input_str)-kmer):
