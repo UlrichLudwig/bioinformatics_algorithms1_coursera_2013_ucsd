@@ -131,6 +131,7 @@ def calScore(motifs):
     return score
 
 
+
 def calProfile(motifs):
     '''
     form Profile from motifs Motif0, ..., Motifi - 2
@@ -145,10 +146,6 @@ def calProfile(motifs):
     for ind,row in enumerate(count_list):        
         profile_dic[ACGT[ind]] =  [item/float(t) for item in row] 
     return profile_dic
-
-    
-    
-    
 
 if __name__ == "__main__":
     # read file and get parameters
