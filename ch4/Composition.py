@@ -22,9 +22,7 @@ def composition(k, text):
     CCAAC
     TCCAA
     '''
-    kmers = [text[i:i+k] for i in range(len(text)-k+1)]
-    kmers.sort()
-    return kmers
+    return sorted([text[i:i+k] for i in range(len(text)-k+1)])
 
 if __name__ == "__main__":
     # read file and get parameters
