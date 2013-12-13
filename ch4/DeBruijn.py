@@ -28,6 +28,9 @@ class DeBruijn(PathGraph):
     '''
     
     #DeBruijnk_path = glue()
+    def __init__(self,k, Dna):
+        super(DeBruijn,self).__init__(k, Dna)
+        self.glue()
 
     def glue(self):
         '''
@@ -58,10 +61,10 @@ class DeBruijn(PathGraph):
                 output.append(tmp)
                 tmp =[]
         output.append(tmp)
-        return output
+        self.DeBruijn_path = output
     
 
-class PathGraph:
+class PathGraph(object):
     '''
     PathGraphk(Text) is a
     path consisting of |Text| - k + 1 edges, where the i-th edge of this
@@ -87,11 +90,11 @@ if __name__ == "__main__":
 
     # run the class 
     y = DeBruijn(k,Dna)
-    output = y.glue()
+    
     
     # output the results
     with  open('db_output.txt','w') as fout:
-        for edge in output:
+        for edge in y.DeBruijn_path:
             if len(edge)>2:
                 fout.write(','.join([' -> '.join(edge[:-1])] + edge[-1:]) + '\n')
             else:
