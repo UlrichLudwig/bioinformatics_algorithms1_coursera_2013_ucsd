@@ -40,25 +40,3 @@ if __name__ == "__main__":
 
     from subprocess import call
     call(["open","c_output.txt"])        
-
-
-if __name__ == "__main__":
-    # read file and get parameters
-    fin = open('c_input.txt','r')
-    k = int(fin.readline().rstrip('\n') )
-    Dna = fin.readline().rstrip('\n')
-    fin.close()
-    
-    # run the function 
-    kmers = composition(k,Dna)
-    
-    # output the results
-    with  open('c_output.txt','w') as fout:
-        for s in kmers:
-            fout.write ("%s\n" % s )
-
-    from subprocess import call
-    call(["open","c_output.txt"])        
-
-
-    

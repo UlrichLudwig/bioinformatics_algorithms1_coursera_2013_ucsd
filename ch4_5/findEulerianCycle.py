@@ -85,7 +85,7 @@ if __name__ == "__main__":
         for line in fin.readlines():
             line.rstrip('\n')
             tmp = line.split('->')
-            adjacency_dic[int(tmp[0])] = [int(a) for a in tmp[1].split(',')]
+            adjacency_dic[int(tmp[0])] = [int(a) for a in tmp[1].split(',')] 
                                         
 
     # run 

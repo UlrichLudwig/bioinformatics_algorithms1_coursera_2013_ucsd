@@ -1,11 +1,26 @@
-
 import overlapGraph as og
-
 
 def getDeBruijnFromPatten(pattern):
     '''
      Input: A collection of k-mers Patterns.
      Output: The adjacency list of the de Bruijn graph DeBruijn(Patterns).
+     Sample Input:
+     GAGG
+     GGGG
+     GGGA
+     CAGG
+     AGGG
+     GGAG
+
+     Sample Output:
+     AGG -> GGG
+     CAG -> AGG
+     GAG -> AGG
+     GGA -> GAG
+     GGG -> GGA,GGG
+     ----
+     TODO :
+     * Use the dic structure to simplifiy this code 
     '''
 
     all_paths = [[og.prefix(kmer),og.suffix(kmer)] for kmer in pattern]

@@ -1,20 +1,24 @@
 import findEulerianPath as fep
 
-def calUniversalCircularStr(k):
+def findEulerianPathString(adjacency_dic):
     '''
-    CODE CHALLENGE: Solve the k-Universal Circular String Problem.
-    Input: An integer k.
-    Output: A k-universal circular string.
+    CODE CHALLENGE: Solve the String Reconstruction Problem.
+    Input: The adjacency list of a directed graph that has an Eulerian path.
+    Output: An Eulerian path in this graph.
     
     Sample Input:
-    4
+    CTT -> TTA
+    ACC -> CCA
+    TAC -> ACC
+    GGC -> GCT
+    GCT -> CTT
+    TTA -> TAC
     
     Sample Output:
-    0000110010111101
+    GGCTTACCA    
     '''
     output_list = fep.findEulerianPath(adjacency_dic)
     output_str = output_list[0][:-1]
-    k = len(output_list[0])
     for kmer in output_list:
         output_str +=kmer[-1]
     return output_str
