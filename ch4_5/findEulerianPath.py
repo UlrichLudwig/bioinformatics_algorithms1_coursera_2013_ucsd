@@ -62,8 +62,7 @@ def getAllVertex(adjacency_dic):
 def calIn(adjacency_dic,vertex):
     count = 0 
     for val in adjacency_dic.values():
-        if vertex in val:
-            count += 1
+        count += val.count(vertex)
     return count 
 
 def calOut(adjacency_dic,vertex):
