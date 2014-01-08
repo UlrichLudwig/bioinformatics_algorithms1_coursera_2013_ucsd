@@ -40,7 +40,7 @@ def localAlign(str1, str2, score_dic, sigma):
 
     find the max score place in the map; and backwards to the source. 
     '''
-    score, backtrack = getAlignmentGraph(str1,str2,score_dic,sigma) 
+    score, backtrack = getAlignmentGraph(str1,str2,score_dic,sigma) # return a list of alignments
     #print s, backtrack
     max_score = max(max(l) for l in score)
 
@@ -55,12 +55,16 @@ def localAlign(str1, str2, score_dic, sigma):
     return result, max_score
     
 def OutputLCS(backtrack,v,m,i,j, result):
+    '''
+    i, j are index of v and m respectively
+    backtracking to get the alignments
+    '''
 
-    if i ==0:
+    if i ==0: # reach the end of v
         result[0] += '-'*j
         result[1] += m[:j]
         return result
-    if j ==0:
+    if j ==0: # reach the end of w
         result[0] += v[:i]
         result[1] += '-'* i 
         return result
